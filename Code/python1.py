@@ -35,7 +35,12 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+    if len(input1)>len(input2):
+        return input1
+    elif len(input1)==len(input2):
+        return f'{input1},{input2}'
+    else:
+    	return input2
 	
 
 
@@ -90,8 +95,15 @@ def two(input):
 	# No Hints for this question
 
 def three(arg1):
-	return ""
+    if (arg1 % 5 == 0 and arg1 % 3 == 0):
+        return "fizzbuzz"
+    elif (arg1%3==0):
+        return "fizz"
+    elif (arg1%5==0):
+        return "buzz"
 
+    else:
+        return "null"
 
 	# <QUESTION 4>
 
@@ -116,8 +128,11 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	return ""
-
+     total=0
+     x=arg1.split()
+     for number in x:
+         total+=int(number)
+     return total
 	# <QUESTION 5>
 
     # Given a large string that represents a csv, the structure of each record will be as follows:
@@ -144,7 +159,15 @@ def four(arg1):
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return ""
+    list=[]
+    t=2
+    x=input.split(",")
+    while (x[t]<len(x)):
+       if (x[t]=="False"):
+          list.append(x[t-2])
+    t+=4
+    return list
+
 
 	# <QUESTION 6>
 
@@ -165,7 +188,12 @@ def five(input):
 
 
 def six(input):
-	return ""
+	if "cei" in input:
+        return True
+    elif "c" not in input and "ie" in input:
+        return True
+    else:
+        return False
 	
 	
 		
@@ -187,7 +215,13 @@ def six(input):
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
 def seven(input): 
-	pass
+	x=input.lower()
+    count=0
+    list=["a","e","i","o","u"]
+    for i in range(len(input)):
+        if (list[i] in input):
+            count+=1
+    return count
    
 
 	# <QUESTION 8>
